@@ -1,0 +1,170 @@
+/*  Variables 
+    (Colour Scheme using https://www.designyourway.net/cs/ui-color-scheme-generator
+*/
+:root {
+  --primary: #f24a4a;
+  --secondary: #3bdddd;
+  --accent: #62f9f9;
+  --neutral: #343a3d;
+  --background: #171111;
+  --surface: #281f1f;
+  --text: #f6f4f4;
+  --mutedText: #a69696;
+  --success: #47d181;
+  --warning: #f0b042;
+  --error: #e45858;
+}
+
+/* Fonts */
+@font-face {
+    font-family: jersey10;
+    src: url("../fonts/Jersey_10/Jersey10-Regular.ttf");
+
+}
+
+/* Home Presets */
+
+body{
+    background-color: var(--background);
+    color: var(--text);
+    font-family: jersey10;
+    font-size: 30px;
+}
+
+/* TopNavbar in home and register */
+
+div#TopNavbar{
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+div#TopNavbar img{
+    padding: 10px;
+    padding-right: 30px;
+    padding-top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+/* Common Font sizes */
+
+p#PageHead{
+    font-size: 75px;
+    text-align: center;
+    padding: 0;
+    margin: 5%;
+    color: var(--primary);
+}
+
+.LongInput{
+    width:80%;
+    height: 35px;
+    font-size: 25px;
+    border-radius: 5px;
+    margin: 5px;
+    font-family: jersey10;
+    padding-left: 10px;
+    color: var(--neutral);
+}
+
+.LongButton{
+    border: 3px solid transparent;
+    border-color: var(--neutral);
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 35px;
+    padding: 5px;
+    font-family: jersey10;
+
+    transition: all 0.3s ease;
+}
+
+.LongButton:hover{
+    width: 80%;
+    color: var(--text);
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+/* Button styled as a hyperlink */
+button#hlink{
+    font-size: 30px;
+    font-family: jersey10;
+    text-decoration: underline;
+    color: var(--accent);
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+div#MediumGap{
+    margin: 3%;
+}
+
+/* Page Specific */
+
+div#LeftCard{
+    width: 50%;
+    height: 700px;
+    border: 5px var(--neutral) solid;
+    border-radius: 7px;
+    background-image: url(../sprites/test.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div#RightCard{
+    width: 45%;
+    height: 60%;
+    border-radius: 7px;
+    border: 1px solid var(--neutral);
+    background-color: var(--surface);
+}
+
+div#LoginCardContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+div#LoginContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+div#LoginContainer input{
+    margin-bottom: 2%;
+}
+
+div#LoginContainer a{
+    margin-bottom: 2%;
+    text-decoration: underline;
+    color: var(--secondary)
+}
+
+/* Register */
+
+div#RegisterContainer{
+    display: flex;
+}
+
+div#LabelInput{
+    width: 80%;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    color: var(--neutral);
+    border-radius: 5px;
+    font-family: jersey10;
+}

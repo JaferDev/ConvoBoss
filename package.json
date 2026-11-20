@@ -1,0 +1,23 @@
+{
+  "name": "convoboss",
+  "version": "1.0.0",
+  "description": "Social Networking Website to discuss various topics related to games. Originally created as a submission for CW2 of CST2120 in Middlesex University, Dubai",
+  "homepage": "https://github.com/JaferDev/ConvoBoss#readme",
+  "bugs": {
+    "url": "https://github.com/JaferDev/ConvoBoss/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaferDev/ConvoBoss.git"
+  },
+  "license": "ISC",
+  "author": "JaferDev",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.22.3"
+  }
+}

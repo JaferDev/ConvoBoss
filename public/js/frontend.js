@@ -1,18 +1,9 @@
 //Page elements
 const loginPage = document.getElementById("LoginPage");
 const registerPage = document.getElementById("RegisterPage");
+const mainPage = document.getElementById("MainPage");
 
 window.onload = Init;
-
-function GoRegister()
-{
-    ChangePage(loginPage, registerPage);
-}
-
-function GoLogin()
-{
-    ChangePage(loginPage, registerPage);
-}
 
 function ChangePage(curPage, newPage)
 {
@@ -23,4 +14,10 @@ function ChangePage(curPage, newPage)
 function Init()
 {
     registerPage.style.display = "none";
+    mainPage.style.display = "none";
+}
+
+function Login()
+{
+    ChangePage(loginPage, mainPage);
 }

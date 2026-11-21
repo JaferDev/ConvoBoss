@@ -47,6 +47,46 @@ div#TopNavbar img{
     padding-top: 20px;
     width: 100px;
     height: 100px;
+    cursor:pointer;
+}
+
+div#LeftSidebar{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    height: 99%;
+    gap: 50px;
+    position: fixed;
+    border: 5px solid var(--surface);
+    align-items: center;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+div#LeftSidebar img{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+
+    transition: all ease 0.3s;
+}
+
+div#LeftSidebar img:hover{
+    transform: scale(1.1);
+}
+
+div#LeftSidebar img[src="sprites/icon.png"]{
+    margin-top: 20px;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 50px;
+}
+
+div#ColumnContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 /* Common Font sizes */
@@ -167,4 +207,155 @@ div#LabelInput{
     color: var(--neutral);
     border-radius: 5px;
     font-family: jersey10;
+    gap: 30px;
+    padding-top: 2px;
+
+}
+
+/* Posts */
+div#PostsArea{
+    width: 70%;
+    height: 100%;
+    margin-left: 17%;
+    background-color: var(--surface);
+}
+
+div#RightSidebar{
+    align-items: center;
+    margin: 0;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 15%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    gap: 50px;
+    position: fixed;
+    border: 5px solid var(--surface);
+}
+
+div#RightSidebar img{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+
+    transition: all ease 0.3s;
+}
+
+div#RightSidebar img:hover{
+    transform: scale(1.1);
+}
+
+/* Post Card */
+
+div#PostsArea{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    background-color: var(--background);
+}
+
+div#Post{
+    display: flex;
+    flex-direction: column;
+    border: var(--mutedText) 1px solid;
+    border-radius: 5px;
+    background-color: var(--surface);
+}
+
+div#Post hr{
+    width: 99%;
+    color: var(--neutral);
+}
+
+div#PostHeader{
+    margin-top: 2%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 2px;
+    padding-bottom: 45px;
+    justify-content: center;
+}
+
+img#postPFP{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 20%;
+}
+
+p#postAuthor{
+    margin-top: 10px;
+    font-size: 30px;
+    color: var(--mutedText);
+    position: absolute;
+    left: 25%;
+}
+
+div#PostHeader img#followBtn{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    right: 20%;
+}
+
+div#PostContent{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+p#postTitle{
+    color: var(--text);
+    font-size: 60px;
+    text-align: center;
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+img#postImg{
+    max-width: 60%;
+    max-height: auto;
+    align-self: center;
+}
+
+p#postBody{
+    color: var(--text);
+    font-size: 25px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#PostFooter{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+div#PostFooter img#postHeart{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 20%;
+}
+
+p#postDesc{
+    color: var(--mutedText);
+    font-size: 20px;
+}
+
+p#postDate{
+    color: var(--mutedText);
+    font-size: 20px;
+    position: absolute;
+    right: 18%;
 }

@@ -12,7 +12,7 @@
         <div id="LoginPage">
             <div id="LoginCardContainer">
                 <div id="LeftCard">
-                    <div id="TopNavbar" onclick="ChangePage(loginPage, loginPage)">
+                    <div id="TopNavbar" onclick="ChangePage(loginPage)">
                         <img src="sprites/icon.png">
                         <p id="PageHead">ConvoBoss</p>
                     </div>
@@ -23,7 +23,7 @@
                     <div id="LoginContainer">
                         <input class="LongInput" id="username" type="text" placeholder="Username">
                         <input class="LongInput" id="password" type="password" placeholder="Password">
-                        <button id="hlink" onclick="ChangePage(loginPage, registerPage)">Register Here</button>
+                        <button id="hlink" onclick="ChangePage(registerPage)">Register Here</button>
                         <br>
                         <button class="LongButton" id="loginBtn" onclick=Login()>Log In</button>
                         <br>
@@ -63,7 +63,7 @@
                         <br>
                         <button class="LongButton">REGISTER</button>
 
-                        <p>Already have an account? <button id="hlink" onclick="ChangePage(registerPage, loginPage)">Login</button></p> 
+                        <p>Already have an account? <button id="hlink" onclick="ChangePage(loginPage)">Login</button></p> 
                         
                     </div>
                 </div> 
@@ -73,11 +73,12 @@
         <div id="MainPage">
             <div id="ColumnContainer">
                 <div id="LeftSidebar">
-                    <img src="sprites/icon.png" title="Home">
-                    <img src="sprites/profile.png" title="Profile">
-                    <img src="sprites/post.png" title="Post">
-                    <img src="sprites/about.png" title="About">
-                    <img src="sprites/settings.png" title="Settings">
+                    <img class="Icon" src="sprites/icon.png" title="Home" onclick="ChangePage(loginPage)">
+                    <img class="Icon" src="sprites/profile.png" title="Profile" onclick="ChangePage(profilePage)">
+                    <img class="Icon" src="sprites/home.png" title="Home">
+                    <img class="Icon" src="sprites/post.png" title="Post" onclick="ChangePage(postPage)">
+                    <img class="Icon" src="sprites/about.png" title="About" onclick="ChangePage(aboutPage)">
+                    <img class="Icon" src="sprites/settings.png" title="Settings" onclick="ChangePage(settingsPage)">
                 </div>
 
                 <div id="PostsArea">
@@ -85,46 +86,140 @@
                     <div id="Post">
                         <div id="PostHeader">
                             <img id="postPFP" src="sprites/profile.png">
-                            <p id="postAuthor">ABCDE</p>
+                            <p id="postAuthor" id="Subtitle">ABCDE</p>
                             <img id="followBtn" src="sprites/followbg.png">
                         </div>
                         <hr>
                         <div id="PostContent">
-                            <p id="postTitle">Why Jafer is da goat</p>
+                            <p id="postTitle" class="Title">Why Jafer is da goat</p>
                             <img id="postImg" src="sprites/test.jpg">
-                            <p id="postBody">Jafer is cool cus I think he's really cool and stuff, also hes super cool and all, he's just very cool in many different senses. I guess bro whatever floats your boat huh. I guess bro whatever helps you sleep at night.</p>
+                            <p id="postBody" class="Body">Jafer is cool cus I think he's really cool and stuff, also hes super cool and all, he's just very cool in many different senses. I guess bro whatever floats your boat huh. I guess bro whatever helps you sleep at night.</p>
                         </div>
                         <hr>
                         <div id="PostFooter">
                             <img id="postHeart" src="sprites/heartunfilled.png">
-                            <p id="postDesc">I wrote this as a test, Let's see if i can make it so theres ... later</p>
-                            <p id="postDate">2d</p>
+                            <p id="postDesc" class="Caption">I wrote this as a test, Let's see if i can make it so theres ... later</p>
+                            <p id="postDate" class="Caption">2d</p>
                         </div>
                     </div>
                     <div id="Post">
                         <div id="PostHeader">
                             <img id="postPFP" src="sprites/profile.png">
-                            <p id="postAuthor">ABCDE</p>
+                            <p id="postAuthor" id="Subtitle">ABCDE</p>
                             <img id="followBtn" src="sprites/followbg.png">
                         </div>
                         <hr>
                         <div id="PostContent">
-                            <p id="postTitle">Why Jafer is da goat</p>
-                            <p id="postBody">Jafer is cool cus I think he's really cool and stuff, also hes super cool and all, he's just very cool in many different senses. I guess bro whatever floats your boat huh. I guess bro whatever helps you sleep at night.</p>
+                            <p id="postTitle" class="Title">Why Jafer is da goat</p>
+                            <p id="postBody" class="Body">Jafer is cool cus I think he's really cool and stuff, also hes super cool and all, he's just very cool in many different senses. I guess bro whatever floats your boat huh. I guess bro whatever helps you sleep at night.</p>
                         </div>
                         <hr>
                         <div id="PostFooter">
                             <img id="postHeart" src="sprites/heartunfilled.png">
-                            <p id="postDesc">I wrote this as a test, Let's see if i can make it so theres ... later</p>
-                            <p id="postDate">2d</p>
+                            <p id="postDesc" class="Caption">I wrote this as a test, Let's see if i can make it so theres ... later</p>
+                            <p id="postDate" class="Caption">2d</p>
                         </div>
                     </div>
                 </div>
 
                 <div id="RightSidebar">
-                    <img src="sprites//messages.png" title="Messages">
-                    <img src="sprites/notifications.png" title="Notifications">
-                    <img src="sprites/search.png" title="Search">
+                    <img class="Icon" src="sprites//messages.png" title="Messages" onclick="ChangePage(messagesPage)">
+                    <img class="Icon" src="sprites/notifications.png" title="Notifications" onclick="ChangePage(notifPage)">
+                    <img class="Icon" src="sprites/search.png" title="Search" onclick="ChangePage(searchPage)">
+                </div>
+            </div>
+        </div>
+
+        <div id="ProfilePage">
+            <div id="LeftSidebar">
+                <img class="Icon" src="sprites/icon.png" title="Home" onclick="ChangePage(loginPage)">
+                <img class="Icon" src="sprites/profile.png" title="Profile" onclick="ChangePage(profilePage)">
+                <img class="Icon" src="sprites/home.png" title="Home" onclick="ChangePage(mainPage)">
+                <img class="Icon" src="sprites/post.png" title="Post" onclick="ChangePage(postPage)">
+                <img class="Icon" src="sprites/about.png" title="About" onclick="ChangePage(aboutPage)">
+                <img class="Icon" src="sprites/settings.png" title="Settings" onclick="ChangePage(settingsPage)">
+            </div>
+
+            <div id="ProfileContainer">
+                <div id="ProfileTop">
+                    <img id="profilePicture" src="sprites/profile.png">
+                    <div id="ProfileInfo">
+                        <p class="LeftTitle">ABCDE</p>
+                        <div id="PostsInfo">
+                            <p id="postsCnt" class="Caption">XX Posts</p>
+                            <p id="followerCnt" class="Caption">XXXX Followers</p>
+                            <p id="followingCnt" class="Caption">XX Following</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="Post">
+                        <div id="PostHeader">
+                            <img id="postPFP" src="sprites/profile.png">
+                            <p id="postAuthor" id="Subtitle">ABCDE</p>
+                            <img id="followBtn" src="sprites/followbg.png">
+                        </div>
+                        <hr>
+                        <div id="PostContent">
+                            <p id="postTitle" class="Title">Why Jafer is da goat</p>
+                            <p id="postBody" class="Body">Jafer is cool cus I think he's really cool and stuff, also hes super cool and all, he's just very cool in many different senses. I guess bro whatever floats your boat huh. I guess bro whatever helps you sleep at night.</p>
+                        </div>
+                        <hr>
+                        <div id="PostFooter">
+                            <img id="postHeart" src="sprites/heartunfilled.png">
+                            <p id="postDesc" class="Caption">I wrote this as a test, Let's see if i can make it so theres ... later</p>
+                            <p id="postDate" class="Caption">2d</p>
+                        </div>
+                    </div>
+                <div id="Post">
+                        <div id="PostHeader">
+                            <img id="postPFP" src="sprites/profile.png">
+                            <p id="postAuthor" id="Subtitle">ABCDE</p>
+                            <img id="followBtn" src="sprites/followbg.png">
+                        </div>
+                        <hr>
+                        <div id="PostContent">
+                            <p id="postTitle" class="Title">Why Jafer is da goat</p>
+                            <p id="postBody" class="Body">Jafer is cool cus I think he's really cool and stuff, also hes super cool and all, he's just very cool in many different senses. I guess bro whatever floats your boat huh. I guess bro whatever helps you sleep at night.</p>
+                        </div>
+                        <hr>
+                        <div id="PostFooter">
+                            <img id="postHeart" src="sprites/heartunfilled.png">
+                            <p id="postDesc" class="Caption">I wrote this as a test, Let's see if i can make it so theres ... later</p>
+                            <p id="postDate" class="Caption">2d</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div id="AboutPage">
+            <div id="LeftSidebar">
+                <img class="Icon" src="sprites/icon.png" title="Home" onclick="ChangePage(loginPage)">
+                <img class="Icon" src="sprites/profile.png" title="Profile" onclick="ChangePage(profilePage)">
+                <img class="Icon" src="sprites/home.png" title="Home" onclick="ChangePage(mainPage)">
+                <img class="Icon" src="sprites/post.png" title="Post" onclick="ChangePage(postPage)">
+                <img class="Icon" src="sprites/about.png" title="About" onclick="ChangePage(aboutPage)">
+                <img class="Icon" src="sprites/settings.png" title="Settings" onclick="ChangePage(settingsPage)">
+            </div>
+
+            <div id="AboutContainer">
+                <p id="PageHead">About</p>
+                <p class="Body">Okay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a test</p>
+                <div id="ContactMe">
+                    <p class="Title" id="ContactHead">Contact Me</p>
+                    <div id="ContactInfo">
+                        <a href="https://www.github.com/JaferDev" target="_blank">
+                            <p class="Subtitle">GitHub</p>
+                            <img class="Icon" src="sprites/github_logo.png">
+                        </a>
+                        <a href="https://www.linkedin.com/in/jafer-hussain-439279359/" target="_blank">
+                            <p class="Subtitle">LinkedIn</p>
+                            <img class="Icon" src="sprites/linkedin_logo.png">
+                        </a>
+                        <a href="mailto:jaferhussaindev@gmail.com" target="_blank">
+                            <p class="Subtitle">Email</p>
+                            <img class="Icon" src="sprites/email.png">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

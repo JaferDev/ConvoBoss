@@ -2,22 +2,28 @@
 const loginPage = document.getElementById("LoginPage");
 const registerPage = document.getElementById("RegisterPage");
 const mainPage = document.getElementById("MainPage");
+const profilePage = document.getElementById("ProfilePage");
+const aboutPage = document.getElementById("AboutPage");
+
+const pages = [loginPage, registerPage, mainPage, profilePage, aboutPage];
 
 window.onload = Init;
 
-function ChangePage(curPage, newPage)
+function ChangePage(newPage)
 {
-    curPage.style.display = "none";
+    pages.forEach(page => {
+        page.style.display = "none";
+    });
+
     newPage.style.display = "block";
 }
 
 function Init()
 {
-    registerPage.style.display = "none";
-    mainPage.style.display = "none";
+    ChangePage(loginPage);
 }
 
 function Login()
 {
-    ChangePage(loginPage, mainPage);
+    ChangePage(mainPage);
 }

@@ -65,10 +65,7 @@ div#LeftSidebar{
 }
 
 div#LeftSidebar img{
-    width: 70px;
-    height: 70px;
     cursor: pointer;
-
     transition: all ease 0.3s;
 }
 
@@ -77,9 +74,9 @@ div#LeftSidebar img:hover{
 }
 
 div#LeftSidebar img[src="sprites/icon.png"]{
-    margin-top: 20px;
     width: 90px;
     height: 90px;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
@@ -97,6 +94,41 @@ p#PageHead{
     padding: 0;
     margin: 5%;
     color: var(--primary);
+}
+
+p.Title{
+    font-size: 60px;
+    text-align: center;
+    padding: 0;
+    margin: 5%;
+    color: var(--white);
+}
+
+p.LeftTitle{
+    font-size: 60px;
+    text-align: left;
+    padding: 0;
+    margin: 5%;
+    color: var(--white);
+}
+
+p.Body{
+    font-size: 25px;
+    text-align: left;
+    padding: 0;
+    color: var(--white);
+}
+
+p.Caption{
+    font-size: 20px;
+    text-align: left;
+    padding: 0;
+    color: var(--mutedText);
+}
+
+img.Icon{
+    width: 60px;
+    height: 60px;
 }
 
 .LongInput{
@@ -291,8 +323,6 @@ img#postPFP{
 
 p#postAuthor{
     margin-top: 10px;
-    font-size: 30px;
-    color: var(--mutedText);
     position: absolute;
     left: 25%;
 }
@@ -311,9 +341,7 @@ div#PostContent{
 }
 
 p#postTitle{
-    color: var(--text);
     font-size: 60px;
-    text-align: center;
     width: 95%;
     margin-top: 10px;
     margin-bottom: 0;
@@ -326,8 +354,6 @@ img#postImg{
 }
 
 p#postBody{
-    color: var(--text);
-    font-size: 25px;
     width: 85%;
     margin-left: auto;
     margin-right: auto;
@@ -349,13 +375,95 @@ div#PostFooter img#postHeart{
 }
 
 p#postDesc{
-    color: var(--mutedText);
-    font-size: 20px;
+    max-width: 70%;
 }
 
 p#postDate{
-    color: var(--mutedText);
-    font-size: 20px;
     position: absolute;
     right: 18%;
+}
+
+/* Profiles */
+
+div#ProfileContainer{
+    margin-left: 13%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 3%;
+    width: 75%;
+}
+
+div#ProfileTop{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-left: 5%;
+}
+
+div#ProfileTop img{
+    width: 200px;
+    height: 200px;
+}
+
+div#ProfileInfo{
+    margin-top: 2%;
+}
+
+div#PostsInfo{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* About Page */
+
+div#AboutContainer{
+    margin-left: 17%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--surface);
+    padding: 2%;
+    border: 1px solid var(--neutral);
+    border-radius: 5px;
+}
+
+div#AboutContainer p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div#ContactMe{
+    border: 1px solid var(--neutral);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#ContactMe p#ContactHead{
+    margin-top: 2%;
+    margin-bottom: 3%;
+    font-size: 50px;
+    color: var(--secondary);
+}
+
+div#ContactMe div#ContactInfo{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+
+div#ContactMe div#ContactInfo a{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    cursor: pointer;
+}
+
+div#ContactMe div#ContactInfo a p{
+    margin-top: 10px;
 }

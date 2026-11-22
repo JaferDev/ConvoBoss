@@ -33,7 +33,7 @@ body{
 
 /* TopNavbar in home and register */
 
-div#TopNavbar{
+div.TopNavbar{
     padding: 0;
     margin: 0;
     top: 0;
@@ -41,7 +41,7 @@ div#TopNavbar{
     display: flex;
 }
 
-div#TopNavbar img{
+div.TopNavbar img{
     padding: 10px;
     padding-right: 30px;
     padding-top: 20px;
@@ -88,7 +88,11 @@ div#ColumnContainer{
 
 /* Common Font sizes */
 
-p#PageHead{
+div.Page{
+    display: none;
+}
+
+p.PageHead{
     font-size: 75px;
     text-align: center;
     padding: 0;
@@ -184,7 +188,7 @@ div#MediumGap{
 
 /* Page Specific */
 
-div#LeftCard{
+div.LeftCard{
     width: 50%;
     height: 700px;
     border: 5px var(--neutral) solid;
@@ -195,7 +199,7 @@ div#LeftCard{
     background-repeat: no-repeat;
 }
 
-div#RightCard{
+div.RightCard{
     width: 45%;
     height: 60%;
     border-radius: 7px;
@@ -232,7 +236,7 @@ div#RegisterContainer{
     display: flex;
 }
 
-div#LabelInput{
+div.LabelInput{
     width: 80%;
     display: flex;
     background-color: rgb(255, 255, 255);
@@ -240,8 +244,18 @@ div#LabelInput{
     border-radius: 5px;
     font-family: jersey10;
     gap: 30px;
-    padding-top: 2px;
+    margin: 5px;
+}
 
+div.LabelInput p{
+    padding: 0;
+    margin: 0;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+div.LabelInput input{
+    padding-top: 10px;
 }
 
 /* Posts */
@@ -466,4 +480,29 @@ div#ContactMe div#ContactInfo a{
 
 div#ContactMe div#ContactInfo a p{
     margin-top: 10px;
+}
+
+/* Create Posts */
+
+div#CreatePostContainer{
+    margin-left: 15%;
+    margin-top: 2%;
+    margin-right: 5%;
+    background-color: var(--surface);
+    border: 1px solid var(--neutral);
+    border-radius: 5px;
+    padding: 2%;
+}
+
+div#CreatePostContainer textarea#postBody{
+    height: 200px;
+}
+
+div#CreatePostContainer button{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea{
+    resize: none;
 }

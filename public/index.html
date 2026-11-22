@@ -7,43 +7,40 @@
         <title>ConvoBoss</title>
     </head>
     <body>
-        <!-- LOGIN PAGE -->
-
-        <div id="LoginPage">
+        <div id="LoginPage" class="Page">
             <div id="LoginCardContainer">
-                <div id="LeftCard">
-                    <div id="TopNavbar" onclick="ChangePage(loginPage)">
+                <div class="LeftCard">
+                    <div class="TopNavbar" onclick="ChangePage(loginPage)">
                         <img src="sprites/icon.png">
-                        <p id="PageHead">ConvoBoss</p>
+                        <p class="PageHead">ConvoBoss</p>
                     </div>
                 </div>
 
-                <div id="RightCard">
-                    <p id="PageHead">LOG IN</p>
+                <div class="RightCard">
+                    <p class="PageHead">LOG IN</p>
                     <div id="LoginContainer">
                         <input class="LongInput" id="username" type="text" placeholder="Username">
                         <input class="LongInput" id="password" type="password" placeholder="Password">
                         <button id="hlink" onclick="ChangePage(registerPage)">Register Here</button>
                         <br>
-                        <button class="LongButton" id="loginBtn" onclick=Login()>Log In</button>
+                        <button class="LongButton" id="loginBtn" onclick="ChangePage(mainPage)">Log In</button>
                         <br>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- REGISTER PAGE -->
-        <div id="RegisterPage">
+        <div id="RegisterPage" class="Page">
             <div id="RegisterContainer">
-                <div id="LeftCard">
-                    <div id="TopNavbar" onclick="ChangePage(registerPage, loginPage)">
+                <div class="LeftCard">
+                    <div class="TopNavbar" onclick="ChangePage(registerPage, loginPage)">
                         <img src="sprites/icon.png">
-                        <p id="PageHead">ConvoBoss</p>
+                        <p class="PageHead">ConvoBoss</p>
                     </div>
                 </div>
 
-                <div id="RightCard">
-                    <p id="PageHead">REGISTER</p>
+                <div class="RightCard">
+                    <p class="PageHead">REGISTER</p>
                     <div id="LoginContainer">
                         <input class="LongInput" id="email" type="email" placeholder="Email (e.g: abc@xyz.com)" autofocus maxlength="64">
                         <input class="LongInput" id="username" type="text" placeholder="Username" maxlength="16">
@@ -51,8 +48,8 @@
                         <input class="LongInput" id="dob" type="date" placeholder="Date of Birth" max="2020-01-01" min="1900-01-01">
                         <input class="LongInput" id="password" type="password" placeholder="Password" maxLength="16">
                         <input class="LongInput" id="confirmPassword" type="password" placeholder="Confirm Password" maxlength="16">
-                        <div id="LabelInput" class="LongInput">
-                            <label>Profile Picture</label>
+                        <div class="LabelInput">
+                            <p>Profile Picture</p>
                             <input id="profilePic" type="file" name="Pfp">
                         </div>
                         <select class="LongInput" id="gender" name="Gender">
@@ -70,7 +67,7 @@
             </div>
         </div>
 
-        <div id="MainPage">
+        <div id="MainPage" class="Page">
             <div id="ColumnContainer">
                 <div id="LeftSidebar">
                     <img class="Icon" src="sprites/icon.png" title="Home" onclick="ChangePage(loginPage)">
@@ -130,7 +127,7 @@
             </div>
         </div>
 
-        <div id="ProfilePage">
+        <div id="ProfilePage" class="Page">
             <div id="LeftSidebar">
                 <img class="Icon" src="sprites/icon.png" title="Home" onclick="ChangePage(loginPage)">
                 <img class="Icon" src="sprites/profile.png" title="Profile" onclick="ChangePage(profilePage)">
@@ -191,7 +188,7 @@
             </div>
         </div>
 
-        <div id="AboutPage">
+        <div id="AboutPage" class="Page">
             <div id="LeftSidebar">
                 <img class="Icon" src="sprites/icon.png" title="Home" onclick="ChangePage(loginPage)">
                 <img class="Icon" src="sprites/profile.png" title="Profile" onclick="ChangePage(profilePage)">
@@ -202,7 +199,7 @@
             </div>
 
             <div id="AboutContainer">
-                <p id="PageHead">About</p>
+                <p class="PageHead">About</p>
                 <p class="Body">Okay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a testOkay this is a test</p>
                 <div id="ContactMe">
                     <p class="Title" id="ContactHead">Contact Me</p>
@@ -221,6 +218,41 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <div id="PostPage" class="Page">
+           <div id="LeftSidebar">
+                <img class="Icon" src="sprites/icon.png" title="Home" onclick="ChangePage(loginPage)">
+                <img class="Icon" src="sprites/profile.png" title="Profile" onclick="ChangePage(profilePage)">
+                <img class="Icon" src="sprites/home.png" title="Home" onclick="ChangePage(mainPage)">
+                <img class="Icon" src="sprites/post.png" title="Post" onclick="ChangePage(postPage)">
+                <img class="Icon" src="sprites/about.png" title="About" onclick="ChangePage(aboutPage)">
+                <img class="Icon" src="sprites/settings.png" title="Settings" onclick="ChangePage(settingsPage)">
+            </div>
+
+            <div id="CreatePostContainer">
+                <p class="PageHead">CREATE</p>
+                <textarea id="postTitle" placeholder="Title..." name="Title" class="LongInput"></textarea> 
+                <span id="titleCnt">0/64</span>
+                <textarea id="postBody" placeholder="Body..." name="Body" class="LongInput" rows="4" cols="50"></textarea>
+                <span id="bodyCnt">0/1024</span>  
+                <div class="LabelInput">
+                    <p class="Subtitle">Post Image (Optional)</p>
+                    <input id="postImg" type="file" name="Pfp" class="LongInput"> 
+                </div>
+                <button class="LongButton">Post</button>
+            </div>
+        </div>
+
+        <div id="SettingsPage" class="Page">
+            <div id="LeftSidebar">
+                <img class="Icon" src="sprites/icon.png" title="Home" onclick="ChangePage(loginPage)">
+                <img class="Icon" src="sprites/profile.png" title="Profile" onclick="ChangePage(profilePage)">
+                <img class="Icon" src="sprites/home.png" title="Home" onclick="ChangePage(mainPage)">
+                <img class="Icon" src="sprites/post.png" title="Post" onclick="ChangePage(postPage)">
+                <img class="Icon" src="sprites/about.png" title="About" onclick="ChangePage(aboutPage)">
+                <img class="Icon" src="sprites/settings.png" title="Settings" onclick="ChangePage(settingsPage)">
             </div>
         </div>
 

@@ -485,13 +485,19 @@ div#ContactMe div#ContactInfo a p{
 /* Create Posts */
 
 div#CreatePostContainer{
-    margin-left: 15%;
+    margin-left: 16%;
     margin-top: 2%;
     margin-right: 5%;
     background-color: var(--surface);
     border: 1px solid var(--neutral);
     border-radius: 5px;
     padding: 2%;
+}
+
+div#CreatePostContainer div#CreatePost{
+    margin-left: 10%;
+    width: 90%;
+
 }
 
 div#CreatePostContainer textarea#postBody{
@@ -505,4 +511,50 @@ div#CreatePostContainer button{
 
 textarea{
     resize: none;
+}
+
+/* Settings Page */
+
+div#SettingsContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 15%;
+    background-color: var(--surface);
+    padding: 3%;
+    border-radius: 5px;
+    border: 1px solid var(--neutral);
+    gap: 15px;
+    justify-content: left;
+}
+
+div#SettingsContainer div{
+    border: 2px solid var(--neutral);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-items: left;
+    padding: 5px;
+}
+
+div#SettingsContainer div p{
+    margin-top: 5px;
+}
+
+div#SettingsContainer div img{
+    margin-top: 15px;
+}
+
+div#SettingsContainer div input{
+    margin-top: 20px;
+}
+
+div#SettingsContainer textarea{
+    height: 100px;
+}
+
+div#SettingsContainer button{
+    margin-right: auto;
+    margin-left: auto;
 }

@@ -232,16 +232,18 @@
             </div>
 
             <div id="CreatePostContainer">
-                <p class="PageHead">CREATE</p>
-                <textarea id="postTitle" placeholder="Title..." name="Title" class="LongInput"></textarea> 
-                <span id="titleCnt">0/64</span>
-                <textarea id="postBody" placeholder="Body..." name="Body" class="LongInput" rows="4" cols="50"></textarea>
-                <span id="bodyCnt">0/1024</span>  
-                <div class="LabelInput">
-                    <p class="Subtitle">Post Image (Optional)</p>
-                    <input id="postImg" type="file" name="Pfp" class="LongInput"> 
+                <div id="CreatePost">
+                    <p class="PageHead">CREATE</p>
+                    <textarea id="postTitle" placeholder="Title..." name="Title" class="LongInput"></textarea> 
+                    <span id="titleCnt">0/64</span>
+                    <textarea id="postBody" placeholder="Body..." name="Body" class="LongInput" rows="4" cols="50"></textarea>
+                    <span id="bodyCnt">0/1024</span>  
+                    <div class="LabelInput">
+                        <p class="Subtitle">Post Image (Optional)</p>
+                        <input id="postImg" type="file" name="Pfp" class="LongInput"> 
+                    </div>
+                    <button class="LongButton">Post</button>
                 </div>
-                <button class="LongButton">Post</button>
             </div>
         </div>
 
@@ -253,6 +255,21 @@
                 <img class="Icon" src="sprites/post.png" title="Post" onclick="ChangePage(postPage)">
                 <img class="Icon" src="sprites/about.png" title="About" onclick="ChangePage(aboutPage)">
                 <img class="Icon" src="sprites/settings.png" title="Settings" onclick="ChangePage(settingsPage)">
+            </div>
+
+            <div id="SettingsContainer">
+                <p class="PageHead">Edit Profile</p>  
+                <div> 
+                    <p class="Subtitle">Change Profile Picture</p>
+                    <img class="Icon" id="profilePic" src="sprites/profile.png"> 
+                    <input type="file" class="LongInput">
+                </div>
+                <div>
+                    <p class="Subtitle">Change Username</p>
+                    <input type="text" placeholder="Username" class="LongInput">
+                </div>                    
+                <textarea id="editProfileBio" placeholder="Bio..." name="Body" class="LongInput" rows="4" cols="50"></textarea>
+                <button class="LongButton">Save Changes</button>
             </div>
         </div>
 

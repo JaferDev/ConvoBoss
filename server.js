@@ -16,4 +16,13 @@ app.use(
     })
 );
 
+let users = [];
+
+app.post(`/M01087633/register`, (request, response) => {
+    const userData = request.body;
+
+    users.push(userData);
+    response.send({"message": users});
+});
+
 app.listen(8080, () => {console.log("Listening on http://localhost:8080")});

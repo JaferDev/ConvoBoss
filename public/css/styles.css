@@ -47,15 +47,14 @@ div.TopNavbar img{
     padding-top: 20px;
     width: 100px;
     height: 100px;
-    cursor:pointer;
 }
 
-div#LeftSidebar{
+div.LeftSidebar{
     display: flex;
     flex-direction: column;
     width: 10%;
     height: 99%;
-    gap: 50px;
+    gap: 35px;
     position: fixed;
     border: 5px solid var(--surface);
     align-items: center;
@@ -64,29 +63,44 @@ div#LeftSidebar{
     bottom: 0;
 }
 
-div#LeftSidebar img{
+div.LeftSidebar img{
     cursor: pointer;
     transition: all ease 0.3s;
 }
 
-div#LeftSidebar img:hover{
+div.LeftSidebar img:hover{
     transform: scale(1.1);
 }
 
-div#LeftSidebar img[src="sprites/icon.png"]{
+div.LeftSidebar img[src="sprites/icon.png"]{
     width: 90px;
     height: 90px;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
-div#ColumnContainer{
+div.ColumnContainer{
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
+div.PageContainer{
+    width: 70%;
+    background-color: var(--surface);
+    border: 1px solid var(--neutral);
+    border-radius: 5px;
+    margin-left: 17%;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2%;
+}
+
 /* Common Font sizes */
+
+.Hidden{
+    display: none;
+}
 
 div.Page{
     display: none;
@@ -130,6 +144,18 @@ p.Caption{
     color: var(--mutedText);
 }
 
+p.Error{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: var(--error);
+    text-align: center;
+    line-height: 15px;
+    margin-bottom: 5px;
+    max-width: 80%;
+    
+}
+
 img.Icon{
     width: 60px;
     height: 60px;
@@ -169,6 +195,7 @@ img.Icon{
     background-color: var(--primary);
     border-color: var(--primary);
 }
+
 /* Button styled as a hyperlink */
 button#hlink{
     font-size: 30px;
@@ -220,7 +247,7 @@ div#LoginContainer{
     align-items: center;
 }
 
-div#LoginContainer input{
+div#LoginContainer {
     margin-bottom: 2%;
 }
 
@@ -237,14 +264,17 @@ div#RegisterContainer{
 }
 
 div.LabelInput{
-    width: 80%;
+    width: 81.5%;
     display: flex;
     background-color: rgb(255, 255, 255);
     color: var(--neutral);
-    border-radius: 5px;
+    border-radius: 3px;
     font-family: jersey10;
     gap: 30px;
-    margin: 5px;
+    font-size: 25px;
+    height: 40px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 div.LabelInput p{
@@ -255,7 +285,14 @@ div.LabelInput p{
 }
 
 div.LabelInput input{
-    padding-top: 10px;
+    padding-top: 5px;
+    font-family: jersey10;
+    font-size: 20px;
+}
+
+select#gender{
+    width: 81.5%;
+    color: var(--neutral);
 }
 
 /* Posts */
@@ -266,12 +303,12 @@ div#PostsArea{
     background-color: var(--surface);
 }
 
-div#RightSidebar{
+div.RightSidebar{
     align-items: center;
     margin: 0;
     padding-top: 2%;
     padding-bottom: 2%;
-    margin-top: 15%;
+    margin-top: 20%;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -281,7 +318,7 @@ div#RightSidebar{
     border: 5px solid var(--surface);
 }
 
-div#RightSidebar img{
+div.RightSidebar img{
     width: 70px;
     height: 70px;
     cursor: pointer;
@@ -289,7 +326,7 @@ div#RightSidebar img{
     transition: all ease 0.3s;
 }
 
-div#RightSidebar img:hover{
+div.RightSidebar img:hover{
     transform: scale(1.1);
 }
 
@@ -333,6 +370,7 @@ img#postPFP{
     height: 50px;
     position: absolute;
     left: 20%;
+    cursor: pointer;
 }
 
 p#postAuthor{
@@ -346,6 +384,7 @@ div#PostHeader img#followBtn{
     height: 50px;
     position: absolute;
     right: 20%;
+    cursor: pointer;
 }
 
 div#PostContent{
@@ -430,19 +469,15 @@ div#PostsInfo{
     gap: 10px;
 }
 
-/* About Page */
-
-div#AboutContainer{
-    margin-left: 17%;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: var(--surface);
-    padding: 2%;
-    border: 1px solid var(--neutral);
-    border-radius: 5px;
+img.deleteBtn{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 15%;
+    cursor: pointer;
 }
+
+/* About Page */
 
 div#AboutContainer p{
     margin-top: 5px;
@@ -484,16 +519,6 @@ div#ContactMe div#ContactInfo a p{
 
 /* Create Posts */
 
-div#CreatePostContainer{
-    margin-left: 16%;
-    margin-top: 2%;
-    margin-right: 5%;
-    background-color: var(--surface);
-    border: 1px solid var(--neutral);
-    border-radius: 5px;
-    padding: 2%;
-}
-
 div#CreatePostContainer div#CreatePost{
     margin-left: 10%;
     width: 90%;
@@ -516,15 +541,6 @@ textarea{
 /* Settings Page */
 
 div#SettingsContainer{
-    display: flex;
-    flex-direction: column;
-    margin-left: 20%;
-    margin-right: 15%;
-    background-color: var(--surface);
-    padding: 3%;
-    border-radius: 5px;
-    border: 1px solid var(--neutral);
-    gap: 15px;
     justify-content: left;
 }
 
@@ -557,4 +573,94 @@ div#SettingsContainer textarea{
 div#SettingsContainer button{
     margin-right: auto;
     margin-left: auto;
+}
+
+/* Search Page */
+div#SearchContainer{
+    width: 60%;
+    padding: 5%;
+}
+
+div#SearchContainer p.PageHead{
+    margin: 0;
+    margin-bottom: 1%;
+}
+
+div#SearchBar{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--background);
+    color: var(--primary);
+    padding: 5px;
+    border: 1px solid var(--neutral);
+    border-radius: 10px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+div#SearchBar input{
+    height: 40px;
+    width: 70%;
+    border: none;
+    background-color: none;
+    background: none;
+    font-size: 30px;
+    color: var(--mutedText);
+    font-family: jersey10;
+    padding-left: 20px;
+
+}
+
+div#SearchBar img{
+    margin-left: 100px;
+    width: 40px;
+    height: 40px;
+}
+
+div#SearchResults{
+    background-color: var(--surface);
+    border: 1px solid var(--neutral);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 2%;
+    width: 82%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.SearchProfile{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 80px;
+    background-color: var(--background);
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: all ease 0.5s;
+}
+
+div.SearchProfile:hover{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 85px;
+    border-radius: 10px;
+    background-color: var(--background);
+}
+
+div.SearchProfile img{
+    width: 70px;
+    height: 70px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+div.SearchProfile p{
+    margin: 0;
+    margin-top: 7px;
 }

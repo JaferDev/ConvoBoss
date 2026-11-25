@@ -20,10 +20,12 @@
                     <p class="PageHead">LOG IN</p>
                     <div id="LoginContainer">
                         <input class="LongInput" id="loginUsername" type="text" placeholder="Username">
+                        <p class="Hidden" id="errorloginUsername"></p>
                         <input class="LongInput" id="loginPassword" type="password" placeholder="Password">
+                        <p class="Hidden" id="errorloginPassword"></p>
                         <button id="hlink" onclick="ChangePage('RegisterPage')">Register Here</button>
                         <br>
-                        <button class="LongButton" id="loginBtn" onclick="ChangePage('MainPage')">Log In</button>
+                        <button class="LongButton" id="loginBtn" onclick="Login()">Log In</button>
                         <br>
                     </div>
                 </div>
@@ -56,7 +58,7 @@
                         <p id="errorconfirmPassword" class="Hidden">test</p>
                         <div class="LabelInput">
                             <p>Profile Picture</p>
-                            <input id="profilePic" type="file" name="Pfp" accept=".jpg .png, .jpeg">
+                            <input id="profilePic" type="file" name="Pfp" accept="image/*">
                         </div>
                         <p id="errorprofilePic" class="Hidden">test</p>
                         <select class="LongInput" id="gender" name="Gender">

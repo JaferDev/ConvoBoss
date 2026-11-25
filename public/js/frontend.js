@@ -1,4 +1,4 @@
-import {RegisterValidation} from './modules/inputvalidation.js';
+import {RegisterValidation, LoginValidation} from './modules/inputvalidation.js';
 
 class Page{
     /**
@@ -26,6 +26,7 @@ let pages = [ loginPage, registerPage, mainPage, profilePage, aboutPage, postPag
 window.onload = Init;
 window.Register = Register;
 window.ChangePage = ChangePage;
+window.Login = Login;
 
 /**
  * 
@@ -64,9 +65,18 @@ function Register()
     const dob = document.getElementById("dob").value;
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
-    const profilePic = document.getElementById("profilePic").value;
+    const profilePic = document.getElementById("profilePic");
     const gender = document.getElementById("gender").value;
     console.log(email, username, fullName, dob, password, confirmPassword, profilePic, gender);
     
-    RegisterValidation(email, username, fullName, dob, password, confirmPassword, profilePic, gender);
+    if (!RegisterValidation(email, username, fullName, dob, password, confirmPassword, profilePic, gender)) return;
+    ChangePage("LoginPage");
+}
+
+function Login()
+{
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+    if (!LoginValidation(username, password)) return;
+    ChangePage("MainPage");
 }

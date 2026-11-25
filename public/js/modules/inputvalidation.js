@@ -1,3 +1,7 @@
+import { User } from "./data.js";
+import { AppendStorage, WriteStorage, ReadStorage } from "./storagehandler.js";
+import { StartSession } from "./sessionhandler.js";
+
 class Field
 {
     constructor(name, value, conditions, id)
@@ -32,6 +36,22 @@ function CheckSpecialChars(inputString)
     return specialChars.test(inputString); //Regex (regular expressions) function string.test to check if special character in string
 }
 
+function CheckUserExists(username)
+{
+    const users = ReadStorage("users");
+    console.log(users);
+    if (users === null) return [false, null];
+    
+    for(let i = 0; i < users.length; i++)
+    {
+        console.log(users[i].username);
+        console.log(username);
+        if (users[i].username == username) return [true, users[i]];
+    }
+
+    return [false, null];
+}
+
 /**
  * 
  * @param {string} email 
@@ -53,7 +73,8 @@ function RegisterValidation(email, username, fullName, dob, password, confirmPas
 
     const usernameField = new Field("Username", username, { "Username cannot include special characters": !CheckSpecialChars(username), 
                                                             "Username cannot be longer than 16 characters": username.length < 17,
-                                                            "Username must at least be 5 characters": username.length > 4,}, "username");
+                                                            "Username must at least be 5 characters": username.length > 4,
+                                                            "Username exists": !CheckUserExists(username)[0]}, "username");
     
     const fullnameField = new Field("Full Name", fullName, { "Full Name cannot include special characters": !CheckSpecialChars(fullName), 
                                                             "Full Name cannot be longer than 64 characters": fullName.length < 64,
@@ -74,12 +95,34 @@ function RegisterValidation(email, username, fullName, dob, password, confirmPas
     const confirmPasswordField = new Field("Confirm Password", confirmPassword, { "Confirm password should have the same value as password": confirmPassword == password}, "confirmPassword");
     
     const pfpSize = profilePic.size; //Bytes
-    console.log(pfpSize);
-    console.log(profilePic.name);
-    console.log(profilePic.type);
-    const profilePicField = new Field("Profile Picture", profilePic, {"Profile Picture must be within 10MB": pfpSize > 0}, "profilePic");
+    const profilePicField = new Field("Profile Picture", profilePic, {}, "profilePic");
 
     let fields = [emailField, usernameField, passwordField, confirmPasswordField, dobField, profilePicField, fullnameField];
+    if (!ValidateForm(fields)) return false;
+
+    const newUser = new User(email, username, fullName, dob, password, profilePic, gender);
+    AppendStorage(newUser, "users");
+    return true;
+}   
+
+function LoginValidation(username, password)
+{
+    const user = CheckUserExists(username);
+    console.log(user);
+    const usernameField = new Field("username", username, {"Username doesn't exist. Do you want to register?" : user[0]}, "loginUsername");
+    const passwordField = new Field("password", password, {}, "loginPassword");
+    if (password !== null && user[1] !== null){ passwordField.conditions = {"Password doesn't match existing user" : user[1].password == password}; console.log(user[1].password == password);}
+
+    const fields = [usernameField, passwordField];
+    if (!ValidateForm(fields)) return false;
+
+    StartSession(username, "username");
+    StartSession(true, "loggedIn");
+    return true;
+}
+
+function ValidateForm(fields)
+{
     let validationPassed = true;
     fields.forEach(field => {   
         if (!field.Validate()) validationPassed = false;
@@ -87,7 +130,7 @@ function RegisterValidation(email, username, fullName, dob, password, confirmPas
     
     if (!validationPassed) { DisplayErrors(fields); return false; }
     return true;
-}   
+}
 
 function DisplayErrors(fields)
 {
@@ -109,4 +152,4 @@ function DisplayErrors(fields)
     });
 }
 
-export { RegisterValidation };
+export { RegisterValidation, LoginValidation };

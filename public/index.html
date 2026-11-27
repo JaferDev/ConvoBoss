@@ -87,23 +87,23 @@
 
                 <div id="PostsArea">
                     <!--Post Card-->
-                    <div id="Post">
-                        <div id="PostHeader">
-                            <img id="postPFP" src="sprites/profile.png">
-                            <p id="postAuthor" id="Subtitle">ABCDE</p>
-                            <img id="followBtn" src="sprites/followbg.png">
+                    <div class="Post">
+                        <div class="PostHeader">
+                            <img class="postPFP" src="sprites/profile.png">
+                            <p class="postAuthor" id="Subtitle">ABCDE</p>
+                            <img class="followBtn" src="sprites/followbg.png">
                         </div>
                         <hr>
-                        <div id="PostContent">
-                            <p id="postTitle" class="Title">Why Jafer is da goat</p>
-                            <img id="postImg" src="sprites/test.jpg">
-                            <p id="postBody" class="Body">Jafer is cool cus I think he's really cool and stuff, also hes super cool and all, he's just very cool in many different senses. I guess bro whatever floats your boat huh. I guess bro whatever helps you sleep at night.</p>
+                        <div class="PostContent">
+                            <p class="Title">Why Jafer is da goat</p>
+                            <img class="postImg" src="sprites/test.jpg">
+                            <p class="postBody">Jafer is cool cus I think he's really cool and stuff, also hes super cool and all, he's just very cool in many different senses. I guess bro whatever floats your boat huh. I guess bro whatever helps you sleep at night.</p>
                         </div>
                         <hr>
-                        <div id="PostFooter">
-                            <img id="postHeart" src="sprites/heartunfilled.png">
-                            <p id="postDesc" class="Caption">I wrote this as a test, Let's see if i can make it so theres ... later</p>
-                            <p id="postDate" class="Caption">2d</p>
+                        <div class="PostFooter">
+                            <img class="postHeart" src="sprites/heartunfilled.png">
+                            <p class="Caption">I wrote this as a test, Let's see if i can make it so theres ... later</p>
+                            <p class="postDate">2d</p>
                         </div>
                     </div>
                     <div id="Post">
@@ -239,15 +239,19 @@
             <div id="CreatePostContainer" class="PageContainer">
                 <div id="CreatePost">
                     <p class="PageHead">CREATE</p>
-                    <textarea id="postTitle" placeholder="Title..." name="Title" class="LongInput"></textarea> 
+                    <textarea id="createPostTitle" placeholder="Title..." name="Title" class="LongInput"></textarea> 
                     <span id="titleCnt">0/64</span>
-                    <textarea id="postBody" placeholder="Body..." name="Body" class="LongInput" rows="4" cols="50"></textarea>
-                    <span id="bodyCnt">0/1024</span>  
+                    <p class="Hidden" id="errorcreatePostTitle"></p>
+                    <textarea id="createPostBody" placeholder="Body..." name="Body" class="LongInput" rows="4" cols="50"></textarea>
+                    <span id="bodyCnt">0/1024</span> 
+                    <p class="Hidden" id="errorcreatePostBody"></p> 
                     <div class="LabelInput">
                         <p class="Subtitle">Post Image (Optional)</p>
-                        <input id="postImg" type="file" name="Pfp" class="LongInput"> 
+                        <input id="createPostImg" type="file" name="Pfp" class="LongInput"> 
                     </div>
-                    <button class="LongButton">Post</button>
+                    <p class="Hidden" id="errorcreatePostImg"></p>
+                    <textarea id="createPostDesc" placeholder="Description..." name="Description" class="LongInput" rows="4" cols="10"></textarea>
+                    <button class="LongButton" onclick="CreatePost()">Post</button>
                 </div>
             </div>
         </div>

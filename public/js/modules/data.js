@@ -12,4 +12,15 @@ class User
     }
 }
 
-export {User};
+class Post
+{
+    constructor(title, user, body = "", imgPath = "", desc = "")
+    {
+        this.title = title;
+        this.body = body;
+        this.imgPath = imgPath;
+        this.user = user
+    }
+}
+
+export {User, Post};

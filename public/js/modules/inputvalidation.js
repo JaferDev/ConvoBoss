@@ -1,6 +1,7 @@
 import { User } from "./data.js";
 import { AppendStorage, WriteStorage, ReadStorage } from "./storagehandler.js";
-import { StartSession } from "./sessionhandler.js";
+import { StartSession, ReadSession } from "./sessionhandler.js";
+import { CreatePost } from "./posthandler.js";
 
 class Field
 {
@@ -93,9 +94,15 @@ function RegisterValidation(email, username, fullName, dob, password, confirmPas
                                                             "Password cannot be more than 16 characters": password.length < 17,}, "password");
     
     const confirmPasswordField = new Field("Confirm Password", confirmPassword, { "Confirm password should have the same value as password": confirmPassword == password}, "confirmPassword");
-    
-    const pfpSize = profilePic.size; //Bytes
+
     const profilePicField = new Field("Profile Picture", profilePic, {}, "profilePic");
+    if (profilePic.files.length != 0)
+    {
+        const pfpSize = profilePic.files[0].size; //Bytes
+        const maxFileSize = 1024*1024*10; //10MB
+        profilePicField.conditions = {"Image must be lesser than 10MB": pfpSize <= maxFileSize};
+    }
+    else profilePicField.value = "";
 
     let fields = [emailField, usernameField, passwordField, confirmPasswordField, dobField, profilePicField, fullnameField];
     if (!ValidateForm(fields)) return false;
@@ -127,9 +134,9 @@ function ValidateForm(fields)
     fields.forEach(field => {   
         if (!field.Validate()) validationPassed = false;
     });
-    
-    if (!validationPassed) { DisplayErrors(fields); return false; }
-    return true;
+
+    DisplayErrors(fields);
+    return validationPassed;
 }
 
 function DisplayErrors(fields)
@@ -152,4 +159,33 @@ function DisplayErrors(fields)
     });
 }
 
-export { RegisterValidation, LoginValidation };
+function EnterPost(title, body, img, desc)
+{
+    const titleField = new Field("title", title, {  "Title must be at least 8 characters": title.length > 7,
+                                                    "Title cannot be greater than 64 characters": title.length < 65}
+                                                , "createPostTitle");
+    
+    const bodyField = new Field("body", body, { "Body must be at least 16 characters": body.length > 15,
+                                                "Body cannot be greater than 1024 characters": body.length < 1025}
+                                                , "createPostBody");
+
+    const imgField = new Field("image", img, {} , "createPostImg");
+
+    const descField = new Field("desc", desc, {"Description cannot be greater than 64 characters": desc.length < 64}
+                                                , "createPostDesc");
+
+    if (img.files.length != 0)
+    {
+        const imgSize = img.files[0].size; //Bytes
+        const maxFileSize = 1024*1024*10; //10MB
+        imgField.conditions = {"Image must be lesser than 10MB": imgSize <= maxFileSize};
+    }
+
+    const fields = [titleField, bodyField, imgField, descField];
+    if (!ValidateForm(fields)) return false;
+    console.log("Validated");
+    CreatePost(title, ReadSession("username"), body, img);
+    return true;
+}
+
+export { RegisterValidation, LoginValidation, EnterPost };

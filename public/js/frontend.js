@@ -1,4 +1,4 @@
-import {RegisterValidation, LoginValidation} from './modules/inputvalidation.js';
+import {RegisterValidation, LoginValidation, EnterPost } from './modules/inputvalidation.js';
 
 class Page{
     /**
@@ -27,6 +27,7 @@ window.onload = Init;
 window.Register = Register;
 window.ChangePage = ChangePage;
 window.Login = Login;
+window.CreatePost = CreatePost;
 
 /**
  * 
@@ -79,4 +80,15 @@ function Login()
     const password = document.getElementById("loginPassword").value;
     if (!LoginValidation(username, password)) return;
     ChangePage("MainPage");
+}
+
+function CreatePost()
+{
+    const title = document.getElementById("createPostTitle").value;
+    const body = document.getElementById("createPostBody").value;
+    const img = document.getElementById("createPostImg");
+    const desc = document.getElementById("createPostDesc");
+    console.log(title, body, img, desc);
+
+    EnterPost(title, body, img);
 }
